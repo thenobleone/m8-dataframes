@@ -32,7 +32,7 @@ highest.raise <- max(salaries$raise)
 
 
 # What was the name of the employee who recieved the highest raise?
-got.highest.raise <- rownames(salaries)[which(salaries$raise == max(salaries$raise))]
+got.highest.raise <- rownames(salaries)[salaries$raise == max(salaries$raise)]
 
 
 # What was the largest decrease in salaries between the two years?
@@ -40,7 +40,7 @@ largest.decrease <- min(salaries$raise)
 
 
 # What was the name of the employee who recieved largest decrease in salary?
-slacker <- rownames(salaries)[which(salaries$raise == min(salaries$raise))]
+slacker <- rownames(salaries)[salaries$raise == min(salaries$raise)]
 
 
 # What was the average salary increase?

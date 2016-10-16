@@ -21,18 +21,20 @@ names.2013 <- name[year == 2013]
 prop.2013 <- prop[year == 2013]
 
 # What was the most popular female name in 2013?
-pop.name.2013 <- name[prop.2013 == max(prop.2013)]
+pop.name.2013 <- names.2013[prop.2013 == max(prop.2013)]
 
 # Write a funciton `MostPopular` that takes in a value `my.year`, and returns
 # a sentence stating the most popular name in that year. 
 MostPopular <- function (my.year) {
   
+  mp.year <- year[year == my.year]
+  mp.names <- name[year == my.year]
+  mp.prop <- prop[year == my.year]
+  mp.name <- mp.names[mp.prop == max(mp.prop[mp.year == my.year])]
   
-  names <- name[which(year == my.year)]
-  prop <- prop[which(year == my.year)]
-  pop.name <- name[which (prop == max(prop))]
+  #most.pop <- names.tmp[prop.tmp == max(prop.tmp[year.tmp == my.year])]
   
-  return (sprintf("The most popular name in %d is %s", my.year, pop.name))
+  return (sprintf("The most popular name in %d is %s", my.year, mp.name))
 }
 
 # What was the most popular female name in 1994?
@@ -45,5 +47,5 @@ MostPopular(1994)
 # a sentence with how popular that name was in that year
 
 
-
+f
 # How popular was the name 'Laura' in 1995
